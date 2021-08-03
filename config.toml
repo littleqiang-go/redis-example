@@ -1,0 +1,12 @@
+[redis]
+addrs = ["localhost:6379"]
+password = ""
+db = 0
+maxRetries = 2
+poolSize = 5
+minIdleConns = 5
+dialTimeout = "1s"
+readTimeout = "1s"
+writeTimeout = "1s"
+idleTimeout = "5s"
+isCluster = false
