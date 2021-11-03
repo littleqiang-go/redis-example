@@ -22,8 +22,9 @@ func WindowRateLimit(limitKey string, limitTime, windowSize int) (bool, error) {
 	if length <= int64(windowSize) {
 		_, err = rdb.RPush(limitKey, now).Result()
 		if err != nil {
-			return true, err
+			return false, err
 		}
+		return true, nil
 	}
 
 	first, err := rdb.LIndex(limitKey, 0).Result()
